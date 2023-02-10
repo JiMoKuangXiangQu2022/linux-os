@@ -1,0 +1,2 @@
+1. Uses a cross compiler, which target to S5P6818, to compile nxvpu-yuv2jpg.c.
+2. Running nxvpu-yuv2jpg on S5P6818 to convert test1280x960.yuv420 or test1280x960.raw to JPEG.
