@@ -1,0 +1,4 @@
+1. Run command: make
+2. Copy syscall_trace and tracee2 to system directory /bin
+3. Run command: /bin/tracee2 &
+4. Run command: /bin/syscall_trace <PID>
