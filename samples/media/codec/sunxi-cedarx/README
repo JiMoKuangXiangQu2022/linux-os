@@ -1,0 +1,11 @@
+1. 到　https://github.com/allwinner-zh/media-codec　下载全职开源项目　sunxi-cedarx　代码。
+2. 将本项目代码文件拷贝到到　sunxi-cedarx　对应代码目录。
+3. 建立目标平台 H3　的交叉编译环境。注意，需用 linux 内核头文件。
+4. 按　sunxi-cedarx　提供的文档编译　sunxi-cedarx　。
+5. 进入代码目录　media-codec-master\sunxi-cedarx\demo\vdecoder　，
+   运行 make 编译 decoder 测试程序。
+6. 将编译生成的　VDecoderTest　程序拷贝到目标平台运行：
+　　　./VDecodeTest [--size=wxh] [--neon={0,1}] file-name
+   其中:
+   --size=wxh 指定输入图像文件的宽和高；
+　　　--neon={0,1} 指示是否使用　ARM neon 指令优化程序速度。
