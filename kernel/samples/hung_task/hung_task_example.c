@@ -38,6 +38,8 @@ static int __init hung_task_demo_init(void)
 		printk(KERN_ERR "%s: Failed to create kernel thread, ret = [%d]\n", __func__, ret);
 	}
 
+	printk(KERN_INFO "hung task example module loaed.\n");
+
 	return ret;
 }
 
@@ -47,6 +49,8 @@ static void __exit hung_task_demo_exit(void)
 		kthread_stop(hung_task);
 		hung_task = NULL;
 	}
+
+	printk(KERN_INFO "hung task example module exited.\n");
 }
 
 module_init(hung_task_demo_init);
