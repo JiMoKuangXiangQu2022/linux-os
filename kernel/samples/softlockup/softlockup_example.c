@@ -11,6 +11,7 @@
 #include <linux/module.h>
 #include <linux/sched.h>
 #include <linux/kthread.h>
+#include <linux/delay.h>
 
 
 static struct task_struct *softlockup_task;
@@ -20,8 +21,15 @@ static int softlockup_task_fn(void *ignored)
 {
 	int ret = 0;
 
-	while (!kthread_should_stop())
+	while (!kthread_should_stop()) {
+	#if (defined(CONFIG_PREEMPT_NONE) || defined(CONFIG_PREEMPT_VOLUNTARY))
 		asm("nop");
+	#else /* CONFIG_PREEMPT */
+		preempt_disable();
+		mdelay(30 * 1000);
+		preempt_enable();
+	#endif
+	}
 
 	return ret;
 }
