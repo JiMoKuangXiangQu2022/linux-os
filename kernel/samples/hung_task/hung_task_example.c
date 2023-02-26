@@ -1,5 +1,5 @@
 /*
- * A example for hung task test.
+ * An example for hung task test.
  *
  * Copyright (c) 2023 Leng Xujun <lengxujun2007@126.com>
  *
@@ -38,7 +38,7 @@ static int __init hung_task_demo_init(void)
 		printk(KERN_ERR "%s: Failed to create kernel thread, ret = [%d]\n", __func__, ret);
 	}
 
-	printk(KERN_INFO "hung task example module loaed.\n");
+	printk(KERN_INFO "hung task example module loaded.\n");
 
 	return ret;
 }

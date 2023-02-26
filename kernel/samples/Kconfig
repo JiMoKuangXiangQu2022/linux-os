@@ -119,9 +119,15 @@ config SAMPLE_STATX
 	  Build example userspace program to use the new extended-stat syscall.
 
 config SAMPLE_HUNG_TASK
-	tristate "Build example for hung task test"
-	depends on DETECT_HUNG_TASK
+	tristate "Build example for hung task test -- loadable modules only"
+	depends on DETECT_HUNG_TASK && m
 	help
 	  Build hung task test example.
+
+config SAMPLE_SOFTLOCKUP
+	tristate "Build example for softlockup task test -- loadable modules only"
+	depends on SOFTLOCKUP_DETECTOR && m
+	help
+	  Build softlocup task test example.
 
 endif # SAMPLES
